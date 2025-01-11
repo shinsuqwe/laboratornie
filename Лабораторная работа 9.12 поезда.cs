@@ -5,7 +5,7 @@ class poe
     static void Main()
     {
         int answer = 0;
-        Console.WriteLine("Введите Станцию");
+        Console.WriteLine("Введите станцию");
         Station st = new Station(Console.ReadLine());
         do
         {
@@ -17,13 +17,13 @@ class poe
             {
                 Console.WriteLine("Введите номер поезда");
                 int num = int.Parse(Console.ReadLine());
-                Console.WriteLine("Введите время отправки в формате XX:YY");
+                Console.WriteLine("Введите время отправки в формате чч:мм");
                 string time = Console.ReadLine();
                 st.addTrain(new Train(st.name,num,time));
                 Console.WriteLine("Поезд успешно добавлен");
             } else if (answer == 2)
             {
-                Console.WriteLine("Введите время отправки в формате XX:YY");
+                Console.WriteLine("Введите время отправки в формате чч:мм");
                 string[] timeStr = Console.ReadLine().Split(':');
                 int[] time = { int.Parse(timeStr[0]), int.Parse(timeStr[1]) };
                 for (int i = 0; i < st.trains.Length; i++)
@@ -42,7 +42,7 @@ class poe
                     }
                 }
                 if (!checker)
-                    Console.WriteLine("Соответствий не найдено");
+                    Console.WriteLine("Не найдено");
             }
 
             Console.WriteLine();
